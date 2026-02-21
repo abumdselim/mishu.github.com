@@ -676,10 +676,10 @@
   </p>
 
   <div class="game-tabs">
-    <button class="game-tab active" onclick="switchGame('snake')">🐍 Snake (Eat Bugs)</button>
-    <button class="game-tab" onclick="switchGame('whack')">🔨 Whack-a-Bug</button>
-    <button class="game-tab" onclick="switchGame('type')">⌨️ Typing Speed Test</button>
-    <button class="game-tab" onclick="switchGame('dino')">🦕 Dino Deployer</button>
+    <button class="game-tab active" onclick="switchGame('snake', this)">🐍 Snake (Eat Bugs)</button>
+    <button class="game-tab" onclick="switchGame('whack', this)">🔨 Whack-a-Bug</button>
+    <button class="game-tab" onclick="switchGame('type', this)">⌨️ Typing Speed Test</button>
+    <button class="game-tab" onclick="switchGame('dino', this)">🦕 Dino Deployer</button>
   </div>
 
   <!-- SNAKE -->
@@ -998,11 +998,11 @@ function handleForm(e) {
 }
 
 /* ===== GAME TABS ===== */
-function switchGame(id) {
+function switchGame(id, tab) {
   document.querySelectorAll('.game-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.game-tab').forEach(t => t.classList.remove('active'));
   document.getElementById('game-' + id).classList.add('active');
-  event.currentTarget.classList.add('active');
+  tab.classList.add('active');
 }
 
 /* =====================================================
